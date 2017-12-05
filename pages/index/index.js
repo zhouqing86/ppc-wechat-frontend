@@ -1,13 +1,16 @@
 //index.js
 //获取应用实例
-const app = getApp()
+const app = getApp();
+const utils = require('../../utils/util');
+const date = new Date();
 
 Page({
   data: {
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    date: utils.formatYYMMDD(date),
+    time: utils.formatHHMM(date)
   },
   //事件处理函数
   bindViewTap: function() {
@@ -43,12 +46,24 @@ Page({
       })
     }
   },
-  getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
+  bindDateChange: function(e) {
     this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
+      date: e.detail.value
+    })
+  },
+  bindTimeChange: function(e) {
+    this.setData({
+      time: e.detail.value
+    })
+  },
+  formSubmit: function (e) {
+    console.log('form发生了submit事件，携带数据为：', e.detail.value)
+  },
+  formReset: function (e) {
+    const date = new Date();
+    this.setData({
+      date: utils.formatYYMMDD(date),
+      time: utils.formatHHMM(date)
     })
   }
 })

@@ -1,0 +1,5 @@
+<template name="foot">
+  <navigator class="page-foot" openType="switchTab" url="/pages/index/index" hover-class="none">
+    <view>拼拼车出品</view>
+  </navigator>
+</template>
