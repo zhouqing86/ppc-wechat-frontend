@@ -1,0 +1,130 @@
+<import src="../../common/head.wxml" />
+<import src="../../common/foot.wxml" />
+
+<view class="container">
+  <template is="head" data="{{title: '拼拼车'}}"/>
+
+  <view class="page-body">
+    <form catchsubmit="formSubmit" catchreset="formReset">
+      <view class="page-section">
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+            <input class="weui-input" auto-focus placeholder="从哪出发"/>
+          </view>
+        </view>
+      </view>
+
+      <view class="page-section">
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+            <input class="weui-input" auto-focus placeholder="到哪里去"/>
+          </view>
+        </view>
+      </view>
+
+      <view class="page-section">
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+              <view class="weui-label">开始日期</view>
+            </view>
+            <view class="weui-cell__bd">
+              <picker mode="date" value="{{fromdate}}" start="2015-09-01" end="2017-09-01" bindchange="bindFromDateChange">
+                <view class="weui-input">{{fromdate}}</view>
+              </picker>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <view class="page-section">
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+              <view class="weui-label">结束日期</view>
+            </view>
+            <view class="weui-cell__bd">
+              <picker mode="date" value="{{todate}}" start="2015-09-01" end="2017-09-01" bindchange="bindToDateChange">
+                <view class="weui-input">{{todate}}</view>
+              </picker>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <view class="page-section">
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+              <view class="weui-cell__hd">
+                <view class="weui-label">出发时间</view>
+              </view>
+              <view class="weui-cell__bd">
+                <picker mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="bindTimeChange">
+                  <view class="weui-input">{{time}}</view>
+                </picker>
+              </view>
+            </view>
+          </view>
+      </view>
+
+      <view class="page-section">
+        <view class="page-section-title">选择可拼车的工作日/非工作日</view>
+        <view class="weui-cells weui-cells_after-title">
+          <checkbox-group bindchange="checkboxChange">
+            <label class="weui-cell weui-check__label" wx:for="{{days}}" wx:key="{{item.value}}">
+              <view class="weui-cell__hd">
+                <checkbox value="{{item.value}}" checked="{{item.checked}}"/>
+              </view>
+              <view class="weui-cell__bd">{{item.name}}</view>
+            </label>
+          </checkbox-group>
+        </view>
+      </view>
+
+      <view class="page-section">
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+            <input class="weui-input" auto-focus placeholder="车主姓名"/>
+          </view>
+        </view>
+      </view>
+
+      <view class="page-section">
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+            <input class="weui-input" auto-focus placeholder="车主电话"/>
+          </view>
+        </view>
+      </view>
+
+      <view class="page-section">
+        <view class="page-section-title">选择收费方式</view>
+        <view class="weui-cells weui-cells_after-title">
+          <radio-group bindchange="radioChange">
+            <label class="weui-cell weui-check__label" wx:for="{{prices}}" wx:key="{{item.value}}">
+
+              <view class="weui-cell__hd">
+                <radio value="{{item.value}}" checked="{{item.checked}}"/>
+              </view>
+              <view class="weui-cell__bd">{{item.name}}</view>
+            </label>
+          </radio-group>
+        </view>
+      </view>
+
+      <view class="page-section">
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+            <input class="weui-input" auto-focus placeholder="价格"/>
+          </view>
+        </view>
+      </view>
+
+      <view class="btn-area" id="buttonContainer">
+        <button type="primary" formType="submit">发布</button>
+        <button formType="reset">重置</button>
+      </view>
+    </form>
+  </view>
+  <template is="foot" />
+</view>

@@ -1,6 +1,7 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/publish/publish",
     "pages/logs/logs"
   ],
   "window":{
@@ -22,7 +23,7 @@
         "text": "查询"
       },
       {
-        "pagePath": "pages/logs/logs",
+        "pagePath": "pages/publish/publish",
         "iconPath": "image/icon_API.png",
         "selectedIconPath": "image/icon_API_HL.png",
         "text": "发布"
