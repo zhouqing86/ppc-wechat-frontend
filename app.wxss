@@ -34,7 +34,7 @@ form{
   font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
 }
 .page-head{
-  padding: 20rpx 50rpx 60rpx;
+  padding: 30rpx 50rpx 70rpx;
   text-align: center;
 }
 .page-head-title{
@@ -106,7 +106,7 @@ form{
 
 .page-section{
   width: 100%;
-  margin-bottom: 48rpx;
+  margin-bottom: 60rpx;
 }
 .page-section_center{
   display: flex;

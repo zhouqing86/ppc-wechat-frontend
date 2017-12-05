@@ -9,7 +9,7 @@
       <view class="page-section">
         <view class="weui-cells weui-cells_after-title">
           <view class="weui-cell weui-cell_input">
-            <input class="weui-input" auto-focus placeholder="从哪走"/>
+            <input class="weui-input" name="from_address" placeholder="从哪走"/>
           </view>
         </view>
       </view>
@@ -17,7 +17,7 @@
       <view class="page-section">
         <view class="weui-cells weui-cells_after-title">
           <view class="weui-cell weui-cell_input">
-            <input class="weui-input" auto-focus placeholder="到哪去"/>
+            <input class="weui-input" name="to_address" placeholder="到哪去"/>
           </view>
         </view>
       </view>
@@ -29,7 +29,7 @@
               <view class="weui-label">日期</view>
             </view>
             <view class="weui-cell__bd">
-              <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+              <picker mode="date" value="{{date}}"  name="from_date" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
                 <view class="weui-input">{{date}}</view>
               </picker>
             </view>
@@ -44,7 +44,7 @@
                 <view class="weui-label">出发时间</view>
               </view>
               <view class="weui-cell__bd">
-                <picker mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="bindTimeChange">
+                <picker mode="time" value="{{time}}" name="from_time" start="09:01" end="21:01" bindchange="bindTimeChange">
                   <view class="weui-input">{{time}}</view>
                 </picker>
               </view>

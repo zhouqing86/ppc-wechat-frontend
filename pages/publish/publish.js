@@ -109,7 +109,18 @@ Page({
     })
   },
   formSubmit: function (e) {
-    console.log('form发生了submit事件，携带数据为：', e.detail.value)
+    console.log('form发生了submit事件，携带数据为：', e.detail.value);
+    var formValues = e.detail.value;
+    formValues['days'] = formValues['days'].join(',');
+    wx.request({
+      url: 'http://api.apitpl.dev/plans',
+      header: {'Content-Type': 'application/json'},
+      method: 'post',
+      data: formValues,
+      success: function(result) {
+        console.log(result);
+      }
+    });
   },
   formReset: function (e) {
     const date = new Date();
