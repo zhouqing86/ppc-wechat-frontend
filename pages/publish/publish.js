@@ -109,7 +109,6 @@ Page({
     })
   },
   formSubmit: function (e) {
-    console.log('form发生了submit事件，携带数据为：', e.detail.value);
     var formValues = e.detail.value;
     formValues['days'] = formValues['days'].join(',');
     wx.request({

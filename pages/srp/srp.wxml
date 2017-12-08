@@ -1,0 +1,22 @@
+<import src="../../common/head.wxml" />
+<import src="../../common/foot.wxml" />
+
+<view class="container">
+  <template is="head" data="{{title: '拼拼车'}}"/>
+
+  <view class="page-body">
+    <view wx:for="{{plans}}" wx:for-index="idx" wx:for-item="item" class="plan-items" wx:key="idx">
+      <view class="plan-card">
+        <view class="plan-title">{{item.from_address}} 至 {{item.to_address}}</view>
+        <view class="plan-title2">{{item.from_date}} 至 {{item.to_date}}  出发时间: {{item.time}}</view>
+        <view class="plan-days">可拼车时间：{{item.days}}</view>
+        <view class="plan-price">{{item.price_negotiable ? '见面沟通' : ''}} {{item.price_negotiable ? '' : '拼车费: '+item.price}}</view>
+        <view class="plan-operation" >
+          <a href="#">关注</a>
+          <a href="#">申请</a>
+        </view>
+      </view>
+    </view>
+  </view>
+  <template is="foot" />
+</view>

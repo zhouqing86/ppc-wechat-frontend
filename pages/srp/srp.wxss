@@ -1,0 +1,41 @@
+@import "../../common/lib/weui.wxss";
+
+.plan-items {
+  margin: 20rpx;
+}
+
+.plan-card {
+  background-color: #fff;
+  -webkit-box-shadow: 0 1rpx 2rpx 0 rgba(0,0,0,.2);
+  box-shadow: 0 1rpx 2rpx 0 rgba(0,0,0,.2);
+  margin-bottom: 1rem;
+  position: relative;
+  padding: 20rpx;
+  font-size: 12px;
+}
+
+.plan-title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1;
+  margin: 0 0 .5rem;
+}
+
+.plan-operation {
+  margin-top:10rpx;
+}
+
+.plan-operation a {
+  padding:  10rpx 20rpx;
+  background: #1aad19;
+  color:  white;
+  border-radius:  5rpx;
+  margin-right: 10rpx;
+  font-size: 14px;
+}
+
+.plan-operation a:hover {
+  background: white;
+  color:  #1aad19;
+  border: 1px solid #1aad19;
+}

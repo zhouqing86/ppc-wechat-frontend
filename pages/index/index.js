@@ -57,7 +57,15 @@ Page({
     })
   },
   formSubmit: function (e) {
-    console.log('form发生了submit事件，携带数据为：', e.detail.value)
+    const formData = e.detail.value;
+    let url = '../srp/srp?from_address=' + formData['from_address'];
+    url += '&to_address=' + formData['to_address'];
+    url += '&from_date=' + formData['from_date'];
+    url += '&from_time=' + formData['from_time'];
+
+    wx.navigateTo({
+      url: url
+    });
   },
   formReset: function (e) {
     const date = new Date();
